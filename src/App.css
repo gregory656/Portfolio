@@ -1,0 +1,209 @@
+/* Custom Dark Theme Overrides for Bootstrap */
+
+body {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+  color: #ffffff !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.navbar {
+  background: rgba(26, 26, 46, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #00d4ff !important;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%) !important;
+  border: none !important;
+  color: #1a1a2e !important;
+  border-radius: 25px !important;
+  padding: 10px 20px !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4) !important;
+}
+
+.btn-outline-light {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  border-radius: 25px !important;
+  padding: 10px 20px !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff !important;
+  color: #1a1a2e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 15px !important;
+}
+
+.card {
+  background: rgba(22, 33, 62, 0.8) !important;
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+  color: #ffffff !important;
+  border-radius: 15px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2) !important;
+  border-color: rgba(0, 212, 255, 0.5) !important;
+}
+
+.card-title {
+  color: #00d4ff !important;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #cccccc !important;
+}
+
+.card-footer {
+  background: rgba(26, 26, 46, 0.8) !important;
+  border-top: 1px solid rgba(0, 212, 255, 0.2) !important;
+  border-radius: 0 0 15px 15px !important;
+}
+
+.btn-link {
+  color: #00d4ff !important;
+  transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+  color: #0099cc !important;
+  transform: scale(1.1);
+}
+
+/* Skills Card Hover Effect */
+.skill-card {
+  border-radius: 15px !important;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  box-shadow: 0 15px 35px rgba(0, 212, 255, 0.3) !important;
+}
+
+/* Icon Rotation */
+.skill-icon {
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image {
+  transition: all 0.3s ease;
+  border-radius: 50% !important;
+}
+
+/* Sections */
+section {
+  padding: 80px 0;
+  position: relative;
+}
+
+section:nth-child(even) {
+  background: rgba(26, 26, 46, 0.3);
+}
+
+/* Footer */
+footer {
+  background: rgba(15, 15, 35, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-top: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding: 100px 0;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .btn {
+    margin: 5px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+}

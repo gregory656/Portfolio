@@ -123,10 +123,10 @@ export default function App() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.7 }}
                   >
-                    <Button variant="primary" href="updatedcv1.pdf" target="_blank" rel="noopener noreferrer">
+                    <Button variant="primary" href="updatedcv.pdf" target="_blank" rel="noopener noreferrer">
                       View CV
                     </Button>
-                    <Button variant="outline-light" href="updatedcv1.pdf" download>
+                    <Button variant="outline-light" href="updatedcv.pdf" download>
                       Download CV
                     </Button>
                   </motion.div>

@@ -67,4 +67,4 @@ const ProjectCard = ({ project, index }) => {
 };
 
 export default ProjectCard;
-
+

@@ -5,6 +5,11 @@ import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaWhatsapp, FaGithub } 
 import About from './components/About';
 import Skills from './components/Skills';
 import ProjectCard from './components/ProjectCard';
+import StatsSection from './components/StatsSection';
+import Education from './components/Education';
+import SkillLevels from './components/SkillLevels';
+import DownloadCV from './components/DownloadCV';
+import ThemeToggle from './components/ThemeToggle';
 import projects from './data/projects';
 
 export default function App() {
@@ -19,7 +24,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+    const sections = ['home', 'about', 'stats', 'skills', 'education', 'projects', 'contact'];
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 120; // offset for navbar height
@@ -42,6 +47,7 @@ export default function App() {
 
   return (
     <>
+      <ThemeToggle />
       <Navbar bg="dark" variant="dark" expand="lg" sticky="top" className="glass-effect">
         <Container>
           <motion.div
@@ -58,7 +64,9 @@ export default function App() {
               {[
                 { id: 'home', label: 'Home' },
                 { id: 'about', label: 'About' },
+                { id: 'stats', label: 'Stats' },
                 { id: 'skills', label: 'Skills' },
+                { id: 'education', label: 'Education' },
                 { id: 'projects', label: 'Projects' },
                 { id: 'contact', label: 'Contact' }
               ].map(({ id, label }) => (
@@ -115,20 +123,14 @@ export default function App() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.5 }}
                   >
-                    Software Engineering Student | Problem Solver
+                    Software Engineer
                   </motion.p>
                   <motion.div
-                    className="d-flex justify-content-center gap-3 flex-wrap"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.7 }}
                   >
-                    <Button variant="primary" href="updatedcv.pdf" target="_blank" rel="noopener noreferrer">
-                      View CV
-                    </Button>
-                    <Button variant="outline-light" href="updatedcv.pdf" download>
-                      Download CV
-                    </Button>
+                    <DownloadCV />
                   </motion.div>
                 </Col>
               </Row>
@@ -139,11 +141,24 @@ export default function App() {
         {/* About Section */}
         <About />
 
+        {/* Stats Section */}
+        <div id="stats">
+          <StatsSection />
+        </div>
+
         {/* Skills Section */}
         <Container id="skills" className="py-5">
           <h2 className="text-center mb-4">Skills</h2>
           <Skills />
         </Container>
+
+        {/* Skill Levels Section */}
+        <SkillLevels />
+
+        {/* Education Section */}
+        <div id="education">
+          <Education />
+        </div>
 
         {/* Projects Section */}
         <motion.section

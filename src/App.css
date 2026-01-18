@@ -1,29 +1,85 @@
-/* Custom Dark Theme Overrides for Bootstrap */
+/* CSS Variables for Themes */
+:root {
+  --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --bg-secondary: rgba(26, 26, 46, 0.3);
+  --bg-tertiary: rgba(15, 15, 35, 0.9);
+  --bg-card: rgba(22, 33, 62, 0.8);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent: #00d4ff;
+  --accent-secondary: #0099cc;
+  --border: rgba(0, 212, 255, 0.2);
+  --shadow: rgba(0, 0, 0, 0.3);
+  --accent-rgba-01: rgba(0, 212, 255, 0.1);
+  --accent-rgba-02: rgba(0, 212, 255, 0.2);
+  --accent-rgba-03: rgba(0, 212, 255, 0.3);
+  --accent-rgba-05: rgba(0, 212, 255, 0.5);
+}
+
+body.dark {
+  --bg-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --bg-secondary: rgba(26, 26, 46, 0.3);
+  --bg-tertiary: rgba(15, 15, 35, 0.9);
+  --bg-card: rgba(22, 33, 62, 0.8);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent: #00d4ff;
+  --accent-secondary: #0099cc;
+  --border: rgba(0, 212, 255, 0.2);
+  --shadow: rgba(0, 0, 0, 0.3);
+  --accent-rgba-01: rgba(0, 212, 255, 0.1);
+  --accent-rgba-02: rgba(0, 212, 255, 0.2);
+  --accent-rgba-03: rgba(0, 212, 255, 0.3);
+  --accent-rgba-05: rgba(0, 212, 255, 0.5);
+}
+
+body.light {
+  --bg-primary: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  --bg-secondary: rgba(248, 249, 250, 0.8);
+  --bg-tertiary: rgba(255, 255, 255, 0.98);
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-glass: rgba(0, 0, 0, 0.08);
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --accent: #007bff;
+  --accent-secondary: #0056b3;
+  --border: rgba(0, 123, 255, 0.25);
+  --shadow: rgba(0, 0, 0, 0.15);
+  --accent-rgba-01: rgba(0, 123, 255, 0.1);
+  --accent-rgba-02: rgba(0, 123, 255, 0.2);
+  --accent-rgba-03: rgba(0, 123, 255, 0.3);
+}
+
+/* Custom Theme Overrides for Bootstrap */
 
 body {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
-  color: #ffffff !important;
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar {
-  background: rgba(26, 26, 46, 0.95) !important;
+  background: var(--bg-glass) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 20px var(--shadow);
+  transition: all 0.3s ease;
 }
 
 .navbar-brand, .navbar-nav .nav-link {
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-  color: #00d4ff !important;
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  color: var(--accent) !important;
+  text-shadow: 0 0 10px var(--accent-rgba-05);
 }
 
 .btn-primary {
@@ -60,19 +116,19 @@ body {
 
 /* Glass Effect */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: var(--bg-glass) !important;
   backdrop-filter: blur(15px) !important;
   -webkit-backdrop-filter: blur(15px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid var(--border) !important;
   border-radius: 15px !important;
 }
 
 .card {
-  background: rgba(22, 33, 62, 0.8) !important;
-  border: 1px solid rgba(0, 212, 255, 0.3) !important;
-  color: #ffffff !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-primary) !important;
   border-radius: 15px !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 8px 32px var(--shadow) !important;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
@@ -80,32 +136,32 @@ body {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2) !important;
-  border-color: rgba(0, 212, 255, 0.5) !important;
+  box-shadow: 0 15px 35px var(--shadow) !important;
+  border-color: var(--accent) !important;
 }
 
 .card-title {
-  color: #00d4ff !important;
+  color: var(--accent) !important;
   font-weight: 600;
 }
 
 .card-text {
-  color: #cccccc !important;
+  color: var(--text-secondary) !important;
 }
 
 .card-footer {
-  background: rgba(26, 26, 46, 0.8) !important;
-  border-top: 1px solid rgba(0, 212, 255, 0.2) !important;
+  background: var(--bg-glass) !important;
+  border-top: 1px solid var(--border) !important;
   border-radius: 0 0 15px 15px !important;
 }
 
 .btn-link {
-  color: #00d4ff !important;
+  color: var(--accent) !important;
   transition: all 0.3s ease;
 }
 
 .btn-link:hover {
-  color: #0099cc !important;
+  color: var(--accent-secondary) !important;
   transform: scale(1.1);
 }
 
@@ -116,7 +172,7 @@ body {
 }
 
 .skill-card:hover {
-  box-shadow: 0 15px 35px rgba(0, 212, 255, 0.3) !important;
+  box-shadow: 0 15px 35px var(--accent-rgba-03) !important;
 }
 
 /* Icon Rotation */
@@ -134,7 +190,7 @@ body {
 }
 
 .skill-category-title {
-  color: #00d4ff;
+  color: var(--accent);
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 40px;
@@ -151,13 +207,13 @@ body {
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background: linear-gradient(90deg, #00d4ff, #0099cc);
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
   border-radius: 2px;
 }
 
 .skill-card {
-  background: rgba(22, 33, 62, 0.9) !important;
-  border: 1px solid rgba(0, 212, 255, 0.2) !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
   border-radius: 20px !important;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
@@ -181,8 +237,8 @@ body {
 
 .skill-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3) !important;
-  border-color: rgba(0, 212, 255, 0.6) !important;
+  box-shadow: 0 20px 40px var(--shadow) !important;
+  border-color: var(--accent) !important;
 }
 
 .skill-icon-container {
@@ -192,7 +248,7 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-glass);
   margin-bottom: 20px;
   transition: all 0.3s ease;
   position: relative;
@@ -206,7 +262,7 @@ body {
   left: 50%;
   width: 0;
   height: 0;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.4s ease;
@@ -218,7 +274,7 @@ body {
 }
 
 .skill-name {
-  color: #ffffff !important;
+  color: var(--text-primary) !important;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 15px;

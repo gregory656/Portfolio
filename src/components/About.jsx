@@ -11,7 +11,7 @@ const About = () => {
   const aboutSections = [
     {
       title: 'Who I Am',
-      content: 'Software Engineering Student | Passionate about building scalable applications',
+      content: 'Software Engineering Student | Passionate about building scalable Software Solns',
       items: []
     },
     {

@@ -10,6 +10,7 @@ import Education from './components/Education';
 import SkillLevels from './components/SkillLevels';
 import DownloadCV from './components/DownloadCV';
 import ThemeToggle from './components/ThemeToggle';
+import ChatAssistant from './components/ChatAssistant';
 import projects from './data/projects';
 
 export default function App() {
@@ -245,6 +246,9 @@ export default function App() {
           <p>&copy; 2025 Gregory Steve</p>
         </footer>
       </Container>
+      
+      {/* AI Chat Assistant */}
+      <ChatAssistant />
     </>
   );
 }

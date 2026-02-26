@@ -10,7 +10,7 @@ import Education from './components/Education';
 import SkillLevels from './components/SkillLevels';
 import DownloadCV from './components/DownloadCV';
 import ThemeToggle from './components/ThemeToggle';
-import ChatAssistant from './components/ChatAssistant';
+import ChatWidget from './components/ChatWidget';
 import projects from './data/projects';
 
 export default function App() {
@@ -248,7 +248,7 @@ export default function App() {
       </Container>
       
       {/* AI Chat Assistant */}
-      <ChatAssistant />
+      <ChatWidget />
     </>
   );
 }

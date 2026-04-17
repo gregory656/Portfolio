@@ -3,14 +3,13 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Button, Box, Typography } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 import DownloadCV from './DownloadCV';
-import DescriptionIcon from '@mui/icons-material/Description';
 import CodeIcon from '@mui/icons-material/Code';
 import EmailIcon from '@mui/icons-material/Email';
 
 const roles = [
+  "Software Engineer | AI Systems Builder",
   "Full Stack Developer",
   "React Developer",
-  "UI Systems Engineer",
   "Problem Solver"
 ];
 
@@ -20,13 +19,39 @@ const Hero = ({ scrollToSection }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000); // Change role every 3 seconds
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section id="home" className="hero-section" style={{ display: 'flex', alignItems: 'center', minHeight: '100vh', paddingTop: '80px', paddingBottom: '80px' }}>
-      <Container>
+    <section 
+      id="home" 
+      className="hero-section" 
+      style={{ 
+        backgroundImage: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&fit=crop&w=1920&q=80')", 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center', 
+        backgroundAttachment: 'fixed', 
+        position: 'relative',
+        display: 'flex', 
+        alignItems: 'center', 
+        minHeight: '100vh', 
+        paddingTop: '80px', 
+        paddingBottom: '80px' 
+      }}
+    >
+      <div 
+        style={{ 
+          position: 'absolute', 
+          top: 0, 
+          left: 0, 
+          right: 0, 
+          bottom: 0, 
+          background: 'rgba(26, 26, 46, 0.7)', 
+          zIndex: 1 
+        }} 
+      />
+      <Container style={{ position: 'relative', zIndex: 2 }}>
         <Row className="align-items-center justify-content-center text-center text-md-start">
           <Col md={7} className="mb-5 mb-md-0 order-2 order-md-1">
             <motion.div
@@ -35,7 +60,7 @@ const Hero = ({ scrollToSection }) => {
               transition={{ duration: 0.8 }}
             >
               <Typography variant="h6" sx={{ color: 'var(--accent)', fontWeight: 600, mb: 2, fontFamily: "'Inter', sans-serif" }}>
-                HELLO, WORLD. I'M
+                HELLO THERE. I'M
               </Typography>
               
               <Typography variant="h2" sx={{ fontWeight: 800, mb: 2, color: 'var(--text-primary)', fontFamily: "'Outfit', sans-serif", letterSpacing: '-0.02em', fontSize: { xs: '3rem', md: '4.5rem' } }}>
@@ -60,7 +85,7 @@ const Hero = ({ scrollToSection }) => {
               </Box>
 
               <Typography variant="body1" sx={{ color: 'var(--text-secondary)', mb: 5, fontSize: '1.1rem', maxWidth: '600px', mx: { xs: 'auto', md: 0 }, lineHeight: 1.8 }}>
-                I'm a Full-Stack Software Engineer dedicated to building scalable digital solutions. With a passion for frontend excellence and system architecture, I transform complex problems into elegant, production-ready web experiences.
+                Software Engineer building intelligent, scalable systems with a focus on AI-powered applications and real-world impact. Projects enhanced with intelligent systems.
               </Typography>
 
               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: { xs: 'center', md: 'flex-start' } }}>
@@ -149,9 +174,11 @@ const Hero = ({ scrollToSection }) => {
           </Col>
         </Row>
       </Container>
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-      `}} />
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes spin { 100% { transform: rotate(360deg); } }
+        `
+      }} />
     </section>
   );
 };

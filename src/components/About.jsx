@@ -49,8 +49,29 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-5">
-      <Container>
+    <section 
+      id="about" 
+      className="py-5"
+      style={{ 
+        backgroundImage: "url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center', 
+        backgroundAttachment: 'fixed', 
+        position: 'relative' 
+      }}
+    >
+      <div 
+        style={{ 
+          position: 'absolute', 
+          top: 0, 
+          left: 0, 
+          right: 0, 
+          bottom: 0, 
+          background: 'rgba(26, 26, 46, 0.8)', 
+          zIndex: 1 
+        }} 
+      />
+      <Container style={{ position: 'relative', zIndex: 2 }}>
         <motion.h2
           className="text-center display-4 mb-4 text-white"
           initial={{ opacity: 0, y: 30 }}
@@ -112,3 +133,4 @@ const About = () => {
 };
 
 export default About;
+

@@ -1,12 +1,24 @@
-# Portfolio Redesign TODO
+# Portfolio Engineering Upgrade TODO
 
-## Approved Plan Steps:
-- [x] Step 1: Update src/data/projects.js with 8 new projects from task.
-- [x] Step 2: Minor updates to src/components/Hero.jsx (AI-focused).
-- [x] Step 3: Add new 'AI Experiments' section to src/App.jsx after projects.
-- [x] Step 4: Minor tweak to src/components/ProjectCard.jsx for categories/tags.
-- [x] Step 5: Test with `npm run dev` – new projects load with stock images, categories as chips, hero AI positioning, AI Experiments section added.
-- [x] Step 6: Task complete – all non-existing features implemented (new projects, AI positioning, AI Experiments, stock images/CDNs, categories).
+## Phase 1: Core Interactions [IN PROGRESS]
+- [x] 1. Create structured portfolio-config.js
+- [x] 2. Install dependencies (react-query, cmdk, react-window)
+- [x] 3. Create CommandPalette.jsx
+- [x] 4. Create ProjectModal.jsx
+- [ ] 5. Update App.jsx (integrate palette/modal)
+- [ ] 6. Update ProjectCard.jsx (modal trigger)
 
-Task complete: Portfolio now has AI-focused hero, 8 new projects with industry stock images from Unsplash, categories/tags, and new AI Experiments section. Matches task specs without overwriting existing design.
+## Phase 2: Data & Perf
+- [ ] 7. GitHub API integration (useQuery stats)
+- [ ] 8. Update ChatAssistant.jsx (enhanced prompt)
+- [ ] 9. Perf opts (virtualization, stats panel)
+- [ ] 10. Analytics (localStorage views/clicks)
+
+## Phase 3: Polish
+- [ ] 11. Easter eggs (debug panel)
+- [ ] 12. Test Lighthouse 90+
+- [ ] 13. Final cleanup
+
+**Legend**: Update after each step. Run `npm run dev` to test.
+
 

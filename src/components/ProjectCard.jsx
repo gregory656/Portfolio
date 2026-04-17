@@ -5,7 +5,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 const ProjectCard = ({ project, index }) => {
-const { title, description, image, tech = [], category = [], github, live, highlight } = project;
+const { title, description, image, tech = [], github, live, highlight } = project;
 
   return (
     <motion.div

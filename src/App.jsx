@@ -1,11 +1,16 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
+
 import { Navbar, Nav, Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa';
 import ThemeToggle from './components/ThemeToggle';
 import ChatWidget from './components/ChatWidget';
 import Hero from './components/Hero';
-import projects from './data/projects';
+import portfolioConfig from './data/portfolio-config';
+// import CommandPalette from './components/CommandPalette';
+import ProjectModal from './components/ProjectModal';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 
 // Lazy loaded components for performance optimization
 const About = lazy(() => import('./components/About'));
@@ -29,6 +34,17 @@ const LoadingFallback = () => (
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const [, setSelectedProject] = useState(null);
+
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 5 * 60 * 1000, // 5 min cache
+        retry: 1
+      }
+    }
+  });
+
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -61,9 +77,12 @@ export default function App() {
   }, []);
 
   return (
-    <>
-      <ThemeToggle />
+    <QueryClientProvider client={queryClient}>
+      <>
+        <ThemeToggle />
+
       <Navbar bg="dark" variant="dark" expand="lg" sticky="top" className="glass-effect">
+
         <Container>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -156,11 +175,12 @@ export default function App() {
                 Latest Projects
               </motion.h2>
               <Row>
-                {projects.map((project, index) => (
-                  <Col md={6} lg={3} key={index} className="mb-4">
-                    <ProjectCard project={project} index={index} />
+{portfolioConfig.projects.map((project, index) => (
+                  <Col md={6} lg={3} key={project.id} className="mb-4">
+                    <ProjectCard project={project} index={index} setSelectedProject={setSelectedProject} />
                   </Col>
                 ))}
+
               </Row>
             </Container>
           </motion.section>
@@ -181,8 +201,10 @@ export default function App() {
         </footer>
       </Container>
 
-      {/* AI Chat Assistant */}
       <ChatWidget />
-    </>
+      </>
+    </QueryClientProvider>
   );
 }
+
+
